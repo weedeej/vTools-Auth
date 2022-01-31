@@ -1,0 +1,50 @@
+﻿<mah:MetroWindow x:Class="vTools_Auth.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vTools_Auth"
+        mc:Ignorable="d"
+        WindowTitleBrush="#FF2F3447"
+        ResizeMode="CanMinimize"
+        GlowBrush="#FF304791"
+        Title="vTools Auth (Vii-chan)" Height="455" Width="400" Background="#FF272E46" Icon="/assets/vtools-auth.ico" SizeToContent="Width" WindowStartupLocation="CenterScreen">
+    <Border Padding="10">
+        <StackPanel Orientation="Vertical">
+            <Image Source="assets/vtools-colored.png" Width="50" Height="50" Margin="0,15,0,0"/>
+            <Button x:Name="btnAuth" Content="Auth with Riot Client" Background="#FFFF5858" Foreground="White" Width="145" Height="40" Margin="0,25,0,10" Click="btnAuth_Click"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox x:Name="field_discordid" Margin="0,0,0,10" Width="215" mah:TextBoxHelper.Watermark="Discord User ID" mah:TextBoxHelper.ClearTextButton="True"></TextBox>
+                <Label Margin="10,0,0,0" Content="Region:" Foreground="White"/>
+                <ComboBox x:Name="combo_region" Height="26" VerticalAlignment="Top">
+                    <ComboBoxItem>ASIA PAC</ComboBoxItem>
+                    <ComboBoxItem>KOREA</ComboBoxItem>
+                    <ComboBoxItem>AMERICAS</ComboBoxItem>
+                    <ComboBoxItem>EUROPE</ComboBoxItem>
+                    <ComboBoxItem>BRAZIL</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <Border Padding="10" BorderBrush="Gray" BorderThickness="2" Background="#FF303030">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Foreground="Lime" FontSize="12" FontWeight="Thin" FontFamily="Courier New">How to use this PROPERLY?</TextBlock>
+                    <TextBlock></TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New">- Start Riot Client</TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New" Margin="16,0,0,0">* If Valorant is already running, Exit and SIGNOUT</TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New" Margin="28,0,0,0">and start Riot Client again.</TextBlock>
+                    <TextBlock></TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New">- Check the "STAY SIGNED IN" Checkbox.</TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New">- Login your account and wait until it is fully loaded.</TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New">- Fill this app with your Discord ID. Select your Region.</TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New" Margin="16,0,0,0">* If you don't know what Discord ID is,</TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New" Margin="28,0,0,0">click the button below.</TextBlock>
+                    <TextBlock></TextBlock>
+                    <TextBlock Foreground="Lime" FontSize="10" FontFamily="Courier New">- Go back to this window and click "AUTH WITH RIOT CLIENT".</TextBlock>
+                </StackPanel>
+            </Border>
+            <Button x:Name="btnDiscordId" Content="Discord ID?????" Background="#FF6D6DFF" Foreground="White" Width="100" Height="30" Margin="0,10,0,10" Click="btnDiscordId_Click" HorizontalAlignment="Right">
+            </Button>
+        </StackPanel>
+    </Border>
+
+</mah:MetroWindow>
