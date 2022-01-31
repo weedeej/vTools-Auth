@@ -22,6 +22,7 @@ namespace vTools_Auth
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private String[] regionList = { "AP", "KR", "NA", "EU", "BR" };
         public MainWindow()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace vTools_Auth
             }
             session.obtainSession();
             session.sess.id = field_discordid.Text;
-            session.sess.shard = combo_region.Text;
+            session.sess.shard = regionList[combo_region.SelectedIndex];
             SessionHandler handler = new SessionHandler(session.sess);
 
             String task = Task.Run(handler.SaveSession).Result;
