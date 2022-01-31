@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/87055977/151750229-fd10f9b6-06f7-44bb-85de-199afe72c727.png" width="100px" height="100px"/>
 </p>
 
-# vTools Auth
+# vTools Auth - [Download here](https://github.com/weedeej/vTools-Auth/releases/latest/download/vTools%20Auth.exe)
 Due to recent auth changes, I created this app to temporarily fix auth issues for Vii-chan.
 Instead of entering username and password *which Rito never liked*,
 I created this app instead so users will use Riot Client to auth.
