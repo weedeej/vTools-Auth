@@ -30,6 +30,8 @@ namespace vTools_Auth
 
         private async void btnAuth_Click(object sender, RoutedEventArgs e)
         {
+            ((Button)sender).IsEnabled = false;
+            ((Button)sender).Content = "Authenticating...";
             LoginWithClient session = new LoginWithClient();
             if (!session.isSessionReady() || field_discordid.Text.Length < 18 || field_discordid.Text.Length > 18 || combo_region.SelectedIndex == -1)
             {
@@ -40,11 +42,14 @@ namespace vTools_Auth
             session.sess.id = field_discordid.Text;
             session.sess.shard = regionList[combo_region.SelectedIndex];
             SessionHandler handler = new SessionHandler(session.sess);
-
-            String task = Task.Run(handler.SaveSession).Result;
+            String task = await Task.Run(handler.SaveSession);
             String status = "Auth is successful!";
             if (task.Contains("error")) status = "E R R O R";
+            else await PostHandling.RemoveLocalSession();
             await this.ShowMessageAsync(status, task);
+            ((Button)sender).IsEnabled = true;
+            ((Button)sender).Content = "Auth with Riot Client";
+
         }
 
         private void btnDiscordId_Click(object sender, RoutedEventArgs e)

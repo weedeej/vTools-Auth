@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
-
 namespace vTools_Auth.src
 {
     public partial class Session
@@ -24,13 +23,12 @@ namespace vTools_Auth.src
         public Session sess;
         public bool isSessionReady()
         {
-            String settingsFolder = Environment.GetEnvironmentVariable("localappdata") + "\\Riot Games\\Riot Client\\Data";
-            String settingsFile = Environment.GetEnvironmentVariable("localappdata") + "\\Riot Games\\Riot Client\\Data\\RiotGamesPrivateSettings.yaml";
+            String settingsFile = Constants.settingsFile;
             StreamReader rd;
             using(FileStream privateSettings = File.Open(settingsFile, FileMode.Open, FileAccess.ReadWrite))
             {
                 rd = new StreamReader(privateSettings);
-                this.fileContent = (String)rd.ReadToEnd().Clone();
+                fileContent = (String)rd.ReadToEnd().Clone();
             }
             rd.Close();
             if (!this.fileContent.Contains("ssid")) return false;
