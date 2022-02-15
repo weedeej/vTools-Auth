@@ -27,7 +27,7 @@ namespace vTools_Auth.src
             if (content.Contains("error")) return "An error has occured.";
             if (content.Contains("updated")) return "Session has been updated! You can now use Vii-chan again!";
             if (content.Contains("set")) return "Session has been listed! You can now use Vii-chan!";
-            return ":V";
+            return content;
         }
     }
 }
